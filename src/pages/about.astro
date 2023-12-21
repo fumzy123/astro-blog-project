@@ -1,5 +1,28 @@
 ---
 
+// Declaring Variables
+const pageTitle = "ABOUT ME";
+
+const identity = {
+  firstName: "Fume",
+  country: "Canada",
+  occupation: "Creative Developer",
+  hobbies: ["reading (philosophy, creativity,...)", "journaling", "video editing", "movies & animation", "dancing"],
+};
+
+const skills = [
+    "HTML", "CSS", "JavaScript", 
+    "React", "Astro", "React-Three-Fiber",
+    "ThreeJS", "GLSL", "WGSL",
+    "Figma", "Affinity Designer",
+    "Blender", "Davinci Resolve",
+    "Cavalry"
+];
+
+const happy = false;
+const finished = false;
+const goal = 0;
+
 ---
 
 <html lang="en">
@@ -8,7 +31,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>About</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 
@@ -16,16 +39,43 @@
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
 
-		<h1>ABOUT ME</h1>
+		<h1>{pageTitle}</h1>
         <h2>Hi there 👋 </h2>
         
         <p>
-            My name is <strong>Fume Uvwie</strong>.
-            I’m a creative developer who enjoys using code to solve problems, build solutions, and visualize ideas. 
+            My name is <strong>{identity.firstName}</strong>.
+            I’m a {identity.occupation} who enjoys usinsg code to solve problems, build solutions, and visualize ideas. 
             I love learning, and experimenting with new frameworks and technoglogies like React, and now Astro. 
             I'm currently on a journey to build visually engaging, immersive, and interactive experiences on the web 
             through a combination of Code, Design, and Animation.
         </p>
+
+
+        <!-- Conditional Rendering -->
+        {identity.hobbies.length >= 2 &&
+            <p> Here are some of my hobbies</p>
+            <ul>
+                <li>{identity.hobbies[0]}</li>
+                <li>{identity.hobbies[1]}</li>
+                <li>{identity.hobbies[2]}</li>
+                <li>{identity.hobbies[3]}</li>
+                <li>{identity.hobbies[4]}</li>
+            </ul>
+        }
+
+
+        {happy && <p>I am happy to be learning Astro!</p>}
+
+        {finished && <p>I finished this tutorial!</p>}
+
+        {goal === Number(3) ? <p>My goal is to finish in 3 days.</p> : <p>--------------------</p>}
+
+
+        <!-- Data Mapping -->
+        <p>My Skills and Interests are: </p>
+        <ul>
+            {skills.map( (skill) => <li>{skill}</li>)}
+        </ul>
 
 	</body>
 </html>
