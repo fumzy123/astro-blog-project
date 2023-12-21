@@ -1,4 +1,6 @@
 ---
+// Import Component
+import Social from './Social.astro';
 
 const socials = [
     ['linkedIn', "/in/fumeuvwie/"],
@@ -19,6 +21,9 @@ const socials = [
 <style>
     .social-links {
 
+        /** Box Model **/
+        margin-top: 2rem;
+        
         /** Layout  **/
         display: flex;
         gap: 2rem;
@@ -33,14 +38,12 @@ const socials = [
 <footer>
     
    <div class="social-links">
-    {
-        socials.map( social =>
-
-            <a class="platform" href={`https://www.${social[0]}.com${social[1]}`}>{social[0]}</a>
-        )
-    }
     
-</div>
+        <Social platform='linkedIn' username='/in/fumeuvwie/' />
+        <Social platform='youtube' username='/@FumezCreates' />
+        <Social platform='github' username='/fumzy123' />
+    
+    </div>
     
 </footer>
 
