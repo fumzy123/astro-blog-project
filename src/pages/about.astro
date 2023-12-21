@@ -4,6 +4,10 @@
 // Import Styling
 import '../styles/global.css';
 
+// Import Components
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
 // Declaring Variables
 const pageTitle = "ABOUT ME";
 
@@ -54,9 +58,7 @@ const textCase = "uppercase";
 	</head>
 	<body>
 
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
+        <Navigation/>
 
 		<h1>{pageTitle}</h1>
         <h2>Hi there 👋 </h2>
@@ -95,6 +97,8 @@ const textCase = "uppercase";
         <ul>
             {skills.map( (skill) => <li class="skill">{skill}</li>)}
         </ul>
+
+        <Footer/>
 
 	</body>
 </html>

@@ -1,0 +1,47 @@
+---
+
+const socials = [
+    ['linkedIn', "/in/fumeuvwie/"],
+    ['youtube', "/@FumezCreates"],
+    ['github', "/fumzy123" ]
+]
+
+
+
+---
+<!-- Pass Server side variables to component front-matter 
+    to client scrpt tags. -->
+<script define:vars={{socials}}>
+    console.log(socials);
+    console.log("Hi");
+</script>
+
+<style>
+    .social-links {
+
+        /** Layout  **/
+        display: flex;
+        gap: 2rem;
+
+        /**  **/
+        background: --var(--cordovan);
+
+    }
+</style>
+
+
+<footer>
+    
+   <div class="social-links">
+    {
+        socials.map( social =>
+
+            <a class="platform" href={`https://www.${social[0]}.com${social[1]}`}>{social[0]}</a>
+        )
+    }
+    
+</div>
+    
+</footer>
+
+

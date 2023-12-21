@@ -1,3 +1,13 @@
+
+/** Globally Accessible CSS Variables **/
+:root {
+    --eerie-black: #17181cff;
+    --dutch-white: #f3dfbfff;
+    --steel-blue: #2d82b7ff;
+    --cordovan: #8e4a49ff;
+}
+
+
 /******* CSS RESET ***** */
 
 /*** 
