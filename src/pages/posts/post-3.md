@@ -1,4 +1,6 @@
 ---
+# YAML FRONT MATTER in Markdown
+
 title: My Third Blog Post
 author: Astro Learner
 description: "I had some challenges, but asking in the community really helped!"

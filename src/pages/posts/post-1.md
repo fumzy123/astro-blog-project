@@ -1,5 +1,5 @@
 ---
-# FrontMatter
+# YAML FRONT MATTER in Markdown
 
 title: 'My First Blog Post'
 pubDate: 2023-12-20
