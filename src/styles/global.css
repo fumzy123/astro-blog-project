@@ -23,8 +23,8 @@
 /* Remove default margin and padding on all elements, and
 Reset the default line height  */
 * {
-    /* margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0;
     line-height: calc(1em + 0.5rem); /* Use the font-size of the element as a base and add half the font-size of the html documet */
 }
 
