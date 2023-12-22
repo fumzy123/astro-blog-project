@@ -7,3 +7,65 @@
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
 </div>
+
+<style>
+
+    .nav-links {
+
+        /* width: 100%; */
+
+        /** Background **/
+        /* background-color: #f3dfbfff; */
+
+        /** Layout **/
+        /* display: none; */
+
+        /** Position */
+        /* top: 5rem;
+        left: 48px; */
+        
+    }
+
+    .nav-links a {
+
+        /** Box Model **/
+        padding: 10px 0;
+
+        /** Layout **/
+        display: block;
+        
+        /** Typography **/
+        color: #f3dfbfff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+        color: #17181cff;
+        background-color: #f3dfbfff;
+    }
+
+    .expanded {
+        display: unset;
+    }
+
+    @media (min-width: 640px) {
+        .nav-links {
+            margin-left: 5em;
+            display: block;
+            position: static;
+            width: auto;
+            background: none;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            padding: 15px 20px;
+        }
+    }
+
+</style>
