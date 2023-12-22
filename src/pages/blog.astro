@@ -1,48 +1,31 @@
 ---
 // JAVASCRIPT FRONT MATTER
 
-// Import Styling
-import '../styles/global.css';
-
-// Import Components
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
+// Import the Layout for the page
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Declare Variables
 const pageTitle = "Blog"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
+<BaseLayout pageTitle={pageTitle}>
 
-        <Header/>
+    <p> 
+        Welcome to my Blog, my little corner on the internet,
+        where I document my learnings as I explore the world of Code, Design, and Animation 
+        to create visually engaging, interactive, and immersive experiences.
         
-		<h1>{pageTitle}</h1>
-        <p> 
-            Welcome to my Blog, my little corner on the internet,
-            where I document my learnings as I explore the world of Code, Design, and Animation 
-            to create visually engaging, interactive, and immersive experiences.
-            
-            Every now and then I also discuss ideas in the realm of Philosophy and Creativity.
-            Feel free to explore some of these ideas as well.
-        </p>
+        Every now and then I also discuss ideas in the realm of Philosophy and Creativity.
+        Feel free to explore some of these ideas as well.
+    </p>
 
-        <p>This is where I will post about my journey learning Astro.</p>
-		<ul>
-			<li><a href="/posts/post-1/">Post 1</a></li>
-			<li><a href="/posts/post-2/">Post 2</a></li>
-			<li><a href="/posts/post-3/">Post 3</a></li>
-		</ul>
+    <p>This is where I will post about my journey learning Astro.</p>
+    <ul>
+        <li><a href="/posts/post-1/">Post 1</a></li>
+        <li><a href="/posts/post-2/">Post 2</a></li>
+        <li><a href="/posts/post-3/">Post 3</a></li>
+    </ul>
 
-        <Footer/>
+</BaseLayout>
 
-	</body>
-</html>
+        

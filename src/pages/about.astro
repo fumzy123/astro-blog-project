@@ -1,12 +1,9 @@
 ---
 // JAVASCRIPT FRONT MATTER
 
-// Import Styling
-import '../styles/global.css';
+// Import Layout for Page
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Import Components
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 
 // Declaring Variables
 const pageTitle = "ABOUT ME";
@@ -37,68 +34,56 @@ const textCase = "uppercase";
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
 
-        <style define:vars={{skillColor, fontWeight, textCase}}>
+<BaseLayout pageTitle={pageTitle}>
 
-            .skill {
-                font-weight: bold;
-                color: var(--skillColor);
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
-        </style>
-
-	</head>
-	<body>
-
-        <Header/>
-
-		<h1>{pageTitle}</h1>
-        <h2>Hi there 👋 </h2>
-        
-        <p>
-            My name is <strong>{identity.firstName}</strong>.
-            I’m a {identity.occupation} who enjoys usinsg code to solve problems, build solutions, and visualize ideas. 
-            I love learning, and experimenting with new frameworks and technoglogies like React, and now Astro. 
-            I'm currently on a journey to build visually engaging, immersive, and interactive experiences on the web 
-            through a combination of Code, Design, and Animation.
-        </p>
+    <h2>Hi there 👋 </h2>
+    
+    <p>
+        My name is <strong>{identity.firstName}</strong>.
+        I’m a {identity.occupation} who enjoys usinsg code to solve problems, build solutions, and visualize ideas. 
+        I love learning, and experimenting with new frameworks and technoglogies like React, and now Astro. 
+        I'm currently on a journey to build visually engaging, immersive, and interactive experiences on the web 
+        through a combination of Code, Design, and Animation.
+    </p>
 
 
-        <!-- Conditional Rendering -->
+    <!-- Conditional Rendering -->
 
-        {identity.hobbies.length >= 2 &&
-            <p> Here are some of my hobbies</p>
-            <ul>
-                <li>{identity.hobbies[0]}</li>
-                <li>{identity.hobbies[1]}</li>
-                <li>{identity.hobbies[2]}</li>
-                <li>{identity.hobbies[3]}</li>
-                <li>{identity.hobbies[4]}</li>
-            </ul>
-        }
-
-        {happy && <p>I am happy to be learning Astro!</p>}
-
-        {finished && <p>I finished this tutorial!</p>}
-
-        {goal === Number(3) ? <p>My goal is to finish in 3 days.</p> : <p>--------------------</p>}
-
-
-        <!-- Data Mapping -->
-        <p>My Skills and Interests are: </p>
+    {identity.hobbies.length >= 2 &&
+        <p> Here are some of my hobbies</p>
         <ul>
-            {skills.map( (skill) => <li class="skill">{skill}</li>)}
+            <li>{identity.hobbies[0]}</li>
+            <li>{identity.hobbies[1]}</li>
+            <li>{identity.hobbies[2]}</li>
+            <li>{identity.hobbies[3]}</li>
+            <li>{identity.hobbies[4]}</li>
         </ul>
+    }
 
-        <Footer/>
+    {happy && <p>I am happy to be learning Astro!</p>}
 
-	</body>
-</html>
+    {finished && <p>I finished this tutorial!</p>}
+
+    {goal === Number(3) ? <p>My goal is to finish in 3 days.</p> : <p>--------------------</p>}
+
+
+    <!-- Data Mapping -->
+    <p>My Skills and Interests are: </p>
+    <ul>
+        {skills.map( (skill) => <li class="skill">{skill}</li>)}
+    </ul>
+
+</BaseLayout>
+
+<!-- Style the Page -->
+<style define:vars={{skillColor, fontWeight, textCase}}>
+
+    .skill {
+        font-weight: bold;
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+    }
+
+</style>
