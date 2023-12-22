@@ -1,38 +1,12 @@
 ---
-// Import Component
+
+// Importing smaller Astro Components
 import Social from './Social.astro';
 
-const socials = [
-    ['linkedIn', "/in/fumeuvwie/"],
-    ['youtube', "/@FumezCreates"],
-    ['github', "/fumzy123" ]
-]
-
-
-
 ---
-<!-- Pass Server side variables to component front-matter 
-    to client scrpt tags. -->
-<script define:vars={{socials}}>
-    console.log(socials);
-    console.log("Hi");
-</script>
 
-<style>
-    .social-links {
+<!-- COMPONENT TEMPLATE | HTML + JS EXPRESSIONS -->
 
-        /** Box Model **/
-        margin-top: 2rem;
-        
-        /** Layout  **/
-        display: flex;
-        gap: 2rem;
-
-        /**  **/
-        background: --var(--cordovan);
-
-    }
-</style>
 
 
 <footer>
@@ -47,4 +21,22 @@ const socials = [
     
 </footer>
 
+
+<style>
+    
+    .social-links {
+
+        /** Box Model **/
+        margin-top: 2rem;
+
+        /** Layout  **/
+        display: flex;
+        gap: 2rem;
+
+        /**  **/
+        background: --var(--cordovan);
+
+    }
+
+</style>
 
