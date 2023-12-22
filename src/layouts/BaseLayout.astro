@@ -3,9 +3,11 @@
 
 // Import Styling
 import '../styles/global.css';
+import '../styles/utils.css';
 
 // Import Components
 import Header from '../components/Header.astro';
+import type { Code } from 'astro:components';
 import Footer from '../components/Footer.astro';
 
 
@@ -24,12 +26,14 @@ const { pageTitle }  = Astro.props;
 	</head>
 	<body>
 
-		<Header/>
+		<Header class="container"/>
 
-		<h1>{pageTitle}</h1>
-        <slot/>
+		<section class="container">
+			<h1 >{pageTitle}</h1>
+        	<slot/>
+		</section>
 
-		<Footer/>
+		<Footer class="container"/>
 
 	</body>
 </html>

@@ -3,6 +3,9 @@
 // Importing smaller Astro Components
 import Social from './Social.astro';
 
+//
+const {class: className} = Astro.props;
+
 ---
 
 <!-- COMPONENT TEMPLATE | HTML + JS EXPRESSIONS -->
@@ -11,7 +14,7 @@ import Social from './Social.astro';
 
 <footer>
     
-   <div class="social-links">
+   <div class=`social-links ${className}`>
     
         <Social platform='linkedIn' username='/in/fumeuvwie/' />
         <Social platform='youtube' username='/@FumezCreates' />

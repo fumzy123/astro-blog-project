@@ -3,9 +3,10 @@
 // Import Smaller Component
 import Navigation from './Navigation.astro';
 
+const { class: className } = Astro.props;
 ---
 
-<header>
+<header class={className}>
     <nav>
         <Navigation/>
     </nav>
