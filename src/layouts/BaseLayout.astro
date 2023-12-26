@@ -7,7 +7,6 @@ import '../styles/utils.css';
 
 // Import Components
 import Header from '../components/Header.astro';
-import type { Code } from 'astro:components';
 import Footer from '../components/Footer.astro';
 
 
@@ -34,6 +33,13 @@ const { pageTitle }  = Astro.props;
 		</section>
 
 		<Footer class="container"/>
+
+		<script>
+			// Import Scripts
+			// Add Script tag to provide client-side JavaScript
+			// that enables user interactivity
+			import "../scripts/menu.js"
+		</script>
 
 	</body>
 </html>

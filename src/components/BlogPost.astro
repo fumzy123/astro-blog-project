@@ -1,0 +1,80 @@
+---
+
+// Get props for Component
+const { url, imageUrl, title, description, tags } = Astro.props;
+
+---
+
+<!-- This component displays a blog post card -->
+
+<a class="blog-post-card__link" href={url}>
+    <div class="blog-post-card__container">
+
+        <div class="blog-post-card__image-container">
+            <img class="blog-post-card__image" src={imageUrl}/>
+        </div>
+        <p class="blog-post-card__title">{title}</p>
+        <p class="blog-post-card__description">{description}</p>
+        <div class="blog-post-card__tag-container">
+            {
+                tags.map( (tag) => {
+                    return <p class="blog-post-card__tag">
+                            {tag}
+                        </p>
+                } )
+            }
+        </div>
+
+    </div>
+</a>
+
+
+<style>
+
+    .blog-post-card__link {
+
+        /** Typography **/
+        text-decoration: none;
+    }
+    
+    .blog-post-card__container {
+
+        /** Box Model  **/
+        padding: 2rem;
+        border: solid 2px #f3dfbfff;
+
+        /** Background **/
+        background-color: #f3dfbfff;
+        
+
+        /** Layout  **/
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog-post-card__tag-container {
+        /** Layout **/
+        display: flex;
+        gap: 2rem;
+    }
+
+    .blog-post-card__tag {
+
+        /** Background *s*/
+        background-color: #2d82b7ff;
+        
+        /** Box Model **/
+        padding: 0.5rem 2em;
+        border-radius: 15px;
+        border: 2px solid #17181cff;
+        margin-top: 1rem;
+
+        /** Typography **/
+        color: white;
+    }
+    
+
+</style>
+
+
+

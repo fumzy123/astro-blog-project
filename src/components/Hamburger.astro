@@ -1,0 +1,50 @@
+
+
+---
+
+---
+
+<div class="hamburger">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+</div>
+
+
+
+
+
+<!-- Style Hamburger component -->
+<style>
+    .hamburger {
+
+        /** Box Model */
+        padding-right: 20px;
+
+        /** Visual Interaction */
+        cursor: pointer;
+    }
+
+    .hamburger .line {
+        /** Layout */
+        display: block;
+
+        /** Box Model */
+        width: 40px;
+        height: 5px;
+        margin-bottom: 10px;
+
+        /** Background */
+        background-color: #f3dfbfff;
+    }
+
+    /* Add Responsiveness */
+    @media (min-width: 640px) {
+
+        .hamburger {
+            display: none;
+
+        }
+    }
+
+</style>

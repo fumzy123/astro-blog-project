@@ -12,13 +12,14 @@
 
     .nav-links {
 
-        /* width: 100%; */
+        /** Box Model **/
+        width: 100%;
 
         /** Background **/
         /* background-color: #f3dfbfff; */
 
         /** Layout **/
-        /* display: none; */
+        display: none;
 
         /** Position */
         /* top: 5rem;
@@ -50,16 +51,29 @@
     }
 
     .expanded {
+        /* The unset CSS keyword resets a property to its inherited value
+            if the property naturally inherits from its parent, and 
+            to its initial value if not 
+         */
         display: unset;
     }
 
+    /* Add Responsiveness to this component */
     @media (min-width: 640px) {
         .nav-links {
+
+            /** Box Model **/
             margin-left: 5em;
-            display: block;
-            position: static;
             width: auto;
+
+            /** Background **/
             background: none;
+
+            /** Layout */
+            display: block;
+
+            /** Position **/
+            position: static;
         }
 
         .nav-links a {

@@ -2,12 +2,15 @@
 
 // Import Smaller Component
 import Navigation from './Navigation.astro';
+import Hamburger from './Hamburger.astro';
 
 const { class: className } = Astro.props;
 ---
 
 <header class={className}>
+
     <nav>
+        <Hamburger/>
         <Navigation/>
     </nav>
 </header>

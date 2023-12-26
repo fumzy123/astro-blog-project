@@ -1,0 +1,64 @@
+---
+
+// Import Layout to keep the Website theme
+import BlogPost from "../../components/BlogPost.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+
+
+
+export async function getStaticPaths () {
+
+    // Fetch your local Post Markdown files
+    const allPosts = await Astro.glob('../posts/*md');
+
+    // Get all the unique tags on Blog posts
+    const uniquetags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+    
+     
+
+    // For each tag in the array return an object that 
+    // specifies the route paramaters and the props for that route page
+    return uniquetags.map( (tag) => {
+
+        const filteredPosts = allPosts.filter( (post) => post.frontmatter.tags?.includes(tag) );
+
+        return {
+            params: {tag},
+            props: { taggedPosts : filteredPosts}
+        }
+    })
+
+
+}
+
+// Get the tag Parameter for this page route
+const { tag } = Astro.params;
+
+// Get the Post props for this page route
+const { taggedPosts } = Astro.props;
+
+// Filter the Post to identify those with the specific tag
+
+---
+
+<BaseLayout pageTitle={tag}>
+    <p>Posts tagged with {tag}</p>
+    <ul>
+        {taggedPosts.map( (post) => {
+            return <li>
+                    <BlogPost 
+                        url={post.url}
+                        imageUrl={post.frontmatter.image.url}
+                        title={post.frontmatter.title}
+                        description={post.frontmatter.description}
+                        tags={post.frontmatter.tags}
+                    />
+                </li>
+        })}
+    </ul>
+</BaseLayout>
+
+<style>
+    
+</style>
