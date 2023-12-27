@@ -1,0 +1,60 @@
+---
+// Import Debugger
+import { Code, Debug } from 'astro:components';
+
+// Import Layout
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Declare variables
+const pageTitle = "Tag Index";
+
+// Fetch all my posts
+const allPosts = await Astro.glob('../posts/*.md');
+// console.log(`All MarkdownPost ${allPosts}`);
+
+
+// Get all the tags from each post
+const uniqueTags = [...new Set (allPosts.map( (post) => post.frontmatter.tags).flat())];
+console.log(uniqueTags)
+
+
+---
+<!-- <Debug {uniqueTags} /> -->
+<BaseLayout pageTitle={pageTitle}>
+    <div class="tags">
+        {
+            uniqueTags.map((tag) => {
+                    return  <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+                } 
+            )
+        }
+    </div>
+</BaseLayout>
+
+
+<style>
+    a {
+        color: #17181cff;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+
+        /** Box Model */
+        padding: 0.5em 1em;
+        border: dotted 1px #a1a1a1;
+        border-radius: 0.5em;
+        margin: 0.25em;
+
+        /** Typography **/
+        font-size: 1.15em;
+
+        /** Background **/
+        background-color: #f3dfbfff;
+    }
+
+</style>
