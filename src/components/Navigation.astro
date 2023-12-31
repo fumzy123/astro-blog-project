@@ -11,6 +11,7 @@
 
 <style>
 
+    /* Light Mode styling  */
     .nav-links {
 
         /** Box Model **/
@@ -37,7 +38,7 @@
         display: block;
         
         /** Typography **/
-        color: #f3dfbfff;
+        color: #17181cff;
         font-size: 1.2rem;
         font-weight: bold;
         text-transform: uppercase;
@@ -45,11 +46,11 @@
         text-align: center;
     }
 
-    .nav-links a:hover,
+    /* .nav-links a:hover,
     .nav-links a:focus {
         color: #17181cff;
         background-color: #f3dfbfff;
-    }
+    } */
 
     .expanded {
         /* The unset CSS keyword resets a property to its inherited value
@@ -59,6 +60,11 @@
         display: unset;
     }
 
+    /* Dark Mode Styling */
+    :global(.dark) .nav-links a { 
+        color: #f3dfbfff;
+
+    }
     /* Add Responsiveness to this component */
     @media (min-width: 640px) {
         .nav-links {

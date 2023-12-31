@@ -38,12 +38,19 @@ html {
 /* Define a Universal Typography for your body */
 body {
     
-
+    /* Dark mode */
     /* Background */
-    background: #17181cff;
+    /* background: #17181cff; */
 
     /* Typography  */
-    color:  #f3dfbfff;
+    /* color:  #f3dfbfff; */
+
+    /* Light Mode*/
+    background: #f3dfbfff;
+    color: #17181cff;
+
+
+
     font-family: 'Poppins', sans-serif;
 }
 
@@ -74,18 +81,19 @@ button {
 
 /** Style H1 **/
 h1 {
+    
     color: #8e4a49ff;
     font-size: 4rem;
 }
 
-html.dark {
+body.dark {
     background-color: #17181cff;
     color: #f3dfbfff;
 }
 
-.dark .nav-links a {
+/* .dark .nav-links a {
     color: #f3dfbfff; 
-}
+} */
 
 
 

@@ -12,12 +12,12 @@
       border: 0;
       background: none;
     }
-    .sun { fill: #f3dfbfff; }
+    .sun { fill:#17181cff;  }
     .moon { fill: transparent; }
   
   
     :global(.dark) .sun { fill: transparent; }
-    :global(.dark) .moon { fill: white; }
+    :global(.dark) .moon { fill: #f3dfbfff; }
   </style>
 
   <script>
@@ -54,12 +54,14 @@
     const handleToggleClick = () => {
 
         // Use the DOM API to get the documents top level element
-        const element = document.documentElement;
+        const bodyElement = document.body;
 
-        // Add the dark class to it when clicked.
-        element.classList.toggle("dark");
+        // Add or Remove the dark class to it when clicked.
+        // Dark class is defined in Global
+        bodyElement.classList.toggle("dark");
 
-        const isDark = element.classList.contains("dark");
+        // 
+        const isDark = bodyElement.classList.contains("dark");
         localStorage.setItem("theme", isDark ? "dark" : "light");
     }
 
