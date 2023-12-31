@@ -3,6 +3,8 @@
 // Import Smaller Component
 import Navigation from './Navigation.astro';
 import Hamburger from './Hamburger.astro';
+import ThemeIcon from './ThemeIcon.astro';
+
 
 const { class: className } = Astro.props;
 ---
@@ -11,6 +13,7 @@ const { class: className } = Astro.props;
 
     <nav>
         <Hamburger/>
+        <ThemeIcon/>
         <Navigation/>
     </nav>
 </header>

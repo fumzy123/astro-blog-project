@@ -33,6 +33,8 @@ html {
     scroll-behavior: smooth; /** This adds a smooth scrolling behavior when users click on a link to a navigate to a different section of the page **/
 }
 
+
+
 /* Define a Universal Typography for your body */
 body {
     
@@ -70,9 +72,19 @@ button {
 }
 
 
+/** Style H1 **/
 h1 {
     color: #8e4a49ff;
     font-size: 4rem;
+}
+
+html.dark {
+    background-color: #17181cff;
+    color: #f3dfbfff;
+}
+
+.dark .nav-links a {
+    color: #f3dfbfff; 
 }
 
 
