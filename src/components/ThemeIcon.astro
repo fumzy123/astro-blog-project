@@ -20,7 +20,7 @@
     :global(.dark) .moon { fill: #f3dfbfff; }
   </style>
 
-  <script>
+  <script is:inline>
 
     // Set the theme based on its existence in the localstorage
     // OR Set the theme based on its operating system preferences
@@ -47,7 +47,6 @@
 
     // Store users preference so it can be remebered across sessions
     window.localStorage.setItem('theme', theme);
-    
 
     // ----------------------------------------------------------
     // Toggle the Theme based on the Click of a button
