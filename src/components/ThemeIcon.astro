@@ -40,9 +40,9 @@
 
     // Apply Dark Theme to HTML doucment
     if (theme === 'light') {
-      document.documentElement.classList.remove('dark');
+      document.body.classList.remove('dark');
     } else {
-      document.documentElement.classList.add('dark');
+      document.body.classList.add('dark');
     }
 
     // Store users preference so it can be remebered across sessions
